@@ -1,0 +1,18 @@
+{#<h1>{% if object %}Editar Doctor{% else %}Nuevo Doctor{% endif %}</h1>#}
+{#<form method="post">#}
+{#    {% csrf_token %}#}
+{#    {{ form.as_p }}#}
+{#    <button type="submit">Guardar</button>#}
+{#</form>#}
+{#<a href="{% url 'doctor_list' %}">Cancelar</a>#}
+{##}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<h1>{% if object %}Editar Doctor{% else %}Nuevo Doctor{% endif %}</h1>
+<form method="post" enctype="multipart/form-data">  <!-- Importante para cargar archivos -->
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- Muestra todos los campos del formulario -->
+    <button type="submit">Guardar</button>
+</form>
+<a href="{% url 'doctor:doctor_list' %}">Cancelar</a>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {{ title }} {% endblock title %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+
+<!-- Encabezado -->
+<header class="header">
+    <h1>{{ title_h1 }}</h1>
+    <p>{{ descriptions_p }}</p>
+</header>
+
+<!-- Sección principal -->
+<section class="main">
+    <h2>{{ title_h2 }} </h2>
+    <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <h3>Consultas Médicas</h3>
+            <p>Ofrecemos consultas especializadas con nuestros médicos expertos en diversas áreas de la salud.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+            <h3>Cirugías</h3>
+            <p>Realizamos todo tipo de cirugías con la más alta tecnología y un equipo médico de primera.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+            <h3>Tratamientos Especializados</h3>
+            <p>Contamos con los mejores tratamientos para enfermedades crónicas y cuidados prolongados.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+            <h3>Atención de Urgencias</h3>
+            <p>Brindamos atención inmediata para casos de emergencia las 24 horas del día.</p>
+        </div>
+        <!-- Card 5 -->
+        <div class="card">
+            <h3>Rehabilitación</h3>
+            <p>Programas personalizados de rehabilitación para una rápida y efectiva recuperación.</p>
+        </div>
+        <!-- Card 6 -->
+        <div class="card">
+            <h3>Diagnóstico por Imagen</h3>
+            <p>Equipos de última generación para la realización de rayos X, resonancias, y más.</p>
+        </div>
+        <!-- Card 7 -->
+        <div class="card">
+            <h3>Laboratorio Clínico</h3>
+            <p>Exámenes de laboratorio completos para un diagnóstico certero.</p>
+        </div>
+        <!-- Card 8 -->
+        <div class="card">
+            <h3>Control de Medicamentos</h3>
+            <p>Sistema avanzado para la gestión y control de medicamentos dentro de la clínica.</p>
+        </div>
+        <!-- Card 9 -->
+        <div class="card">
+            <h3>Hospitalización</h3>
+            <p>Ofrecemos habitaciones cómodas y servicios de hospitalización para nuestros pacientes.</p>
+        </div>
+    </div>
+    <!-- Botón para ir a la lista de doctores -->
+    <div class="button-container" style="margin-top: 20px;">
+        <a href="{% url 'doctor:doctor_list' %}" class="btn">Ir a la Lista de Doctores</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2024 JavicSoftCode</p>
+</footer>
+
+</body>
+</html>

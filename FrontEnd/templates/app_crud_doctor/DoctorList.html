@@ -1,0 +1,38 @@
+<!-- app_crud_doctor/DoctorList.html -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<div class="container">
+    <h1>Lista de Doctores</h1>
+    <a href="{% url 'doctor:doctor_create' %}" class="btn-nuevo-doctor">Nuevo Doctor</a>
+    <table>
+        <thead>
+        <tr>
+            <th>Foto Docto</th>
+            <th>Cédula</th>
+            <th>Nombre</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for doctor in doctores %}
+            <tr>
+                <td><img src="{{ doctor.image.url }}" alt="{{ doctor.nombre }}" class="img-doctor"></td>
+                <td>{{ doctor.cedula }}</td>
+                <td>{{ doctor.nombre }}</td>
+                <td>{{ doctor.get_estado_display }}</td>
+                <td>
+                    <a href="{% url 'doctor:doctor_update' doctor.pk %}">Editar</a> |
+                    <a href="{% url 'doctor:doctor_delete' doctor.pk %}">Eliminar</a>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="5">No hay doctores disponibles.</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+</div>
